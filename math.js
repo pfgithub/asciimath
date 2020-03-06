@@ -198,3 +198,11 @@ let demo2 = deriv(
     str("1")
 );
 console.log(print(box(demo2)));
+
+let recurse = (count) => {
+    if(count <= 0) return str("1");
+    return hcombine(str("1 "), frac(recurse(count - 1), recurse(count - 1)), str(" 1"));
+};
+
+let demo3 = recurse(4);
+console.log(print(box(demo3)));
